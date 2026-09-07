@@ -1,17 +1,27 @@
-# Prajyot Satarde — Full-Stack Portfolio
+# Prajyot Satarde — Developer Portfolio
 
-A modern full-stack developer portfolio built with **Next.js 14, React, TypeScript and API routes**.
+A production-minded personal portfolio built with **Next.js, React, TypeScript and server-side API routes**.
 
-## What changed
-- Converted the static single-file portfolio into a real Next.js app.
-- Added responsive navigation and redesigned sections while retaining the original dark neon aesthetic.
-- Added `/api/projects` for server-backed portfolio project data.
-- Added `/api/github` for live GitHub profile/repository metrics with caching.
-- Added `/api/contact` with request validation for the contact form.
-- Added responsive mobile layout.
-- Added real project links for ManhwaMatch, VoiceShield and this repository.
+## Highlights
 
-## Run locally
+- Responsive portfolio with sections for About, Experience, Projects, Skills, GitHub and Contact.
+- Live GitHub profile/repository data fetched server-side with caching.
+- Project data exposed through `/api/projects` so content can evolve without rewriting the page.
+- Contact API with validation and optional **Resend** delivery.
+- Accessible navigation and external links with safe `rel` attributes.
+- Production metadata, Open Graph/Twitter metadata, viewport configuration and robots directives.
+- Vercel-friendly Next.js app with environment-variable configuration.
+
+## Stack
+
+- Next.js 15
+- React 18
+- TypeScript
+- Lucide React
+- CSS with responsive layouts and a dark editorial/neon visual system
+
+## Local development
+
 ```bash
 npm install
 npm run dev
@@ -19,13 +29,44 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Environment variables
-Create `.env.local` when deploying:
-```env
-GITHUB_USERNAME=PrajyotXDev
-# Optional: raises GitHub API limits
-GITHUB_TOKEN=your_github_token
+Useful checks:
+
+```bash
+npm run lint
+npm run build
 ```
 
-## Production contact delivery
-The contact endpoint is intentionally provider-neutral. Connect `/api/contact` to Resend, Formspree, Supabase, a database, or another mail service before production so submitted messages are actually delivered/stored.
+## Environment variables
+
+Copy `.env.example` to `.env.local`:
+
+```env
+GITHUB_USERNAME=PrajyotXDev
+GITHUB_TOKEN=
+CONTACT_TO=
+RESEND_API_KEY=
+CONTACT_FROM=Portfolio <onboarding@resend.dev>
+```
+
+`GITHUB_TOKEN` is optional. The contact endpoint works safely without Resend configured, but it will not claim a message was delivered. For production delivery, configure `RESEND_API_KEY`, `CONTACT_TO`, and a valid sender domain/address in your Resend account.
+
+## Deploy on Vercel
+
+Import `PrajyotXDev/Missing-No` into Vercel, keep the framework preset as **Next.js**, and add the environment variables from `.env.local` in the Vercel project settings. Then deploy.
+
+## Project structure
+
+```text
+app/
+├── api/
+│   ├── contact/route.ts
+│   ├── github/route.ts
+│   └── projects/route.ts
+├── globals.css
+├── layout.tsx
+└── page.tsx
+```
+
+## Notes
+
+Project and experience claims should be kept aligned with Prajyot's actual work as the portfolio evolves. The GitHub section is intentionally live so repository activity stays current.
