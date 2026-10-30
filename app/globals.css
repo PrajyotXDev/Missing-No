@@ -12,3 +12,42 @@
 @media(max-width:950px){.nav-links{position:absolute;top:72px;left:0;right:0;padding:20px;display:none;flex-direction:column;background:#060608;border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.nav-right button{display:block}.online{display:none}.hero{grid-template-columns:1fr;gap:45px}.system-card{max-width:700px}.about-layout,.skills-layout,.contact-grid{grid-template-columns:1fr}.experience-grid{grid-template-columns:1fr 1fr}.section header p{float:none;margin-top:15px}.skill-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.hero{padding-top:125px}.hero h1{font-size:clamp(78px,24vw,130px)}.hero-meta,.scroll{display:none}.section{padding-block:85px}.project-row{grid-template-columns:35px 1fr}.project-arrow{grid-column:2;flex-direction:row;align-items:center}.about-side{grid-template-columns:1fr 1fr}.experience-grid,.github-stats,.form-row{grid-template-columns:1fr}.contact-copy,form,.about-card{padding:25px}.about-card h3{margin-top:60px}.repo-list>a{grid-template-columns:1fr 20px}.repo-list aside{display:none}.section header h2{font-size:62px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker>div,.boot{animation:none}.boot{display:none}.project-row,.btn{transition:none}}
+
+
+/* EXPERIMENTAL BUILD LAB */
+.buildlab{max-width:1450px;margin:0 auto;padding:120px clamp(22px,7vw,110px) 70px;position:relative}
+.buildlab-top,.buildlab-foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font:9px 'Space Mono';letter-spacing:1.5px;color:#66666d}
+.buildlab-top{border-bottom:1px solid var(--line);padding-bottom:16px}
+.buildlab-top span:last-child{color:var(--green)}.buildlab-top i{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:7px;box-shadow:0 0 12px var(--green)}
+.buildlab-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(35px,7vw,100px);align-items:center;padding:55px 0}
+.buildlab-kicker{display:flex;align-items:center;gap:9px;color:var(--cyan);font:9px 'Space Mono';letter-spacing:2px}
+.buildlab-copy h2{font:clamp(65px,9vw,122px)/.78 'Bebas Neue';letter-spacing:2px;margin:30px 0}
+.buildlab-copy h2 em{font-style:normal;color:var(--green);-webkit-text-stroke:1px var(--green)}
+.buildlab-lead{max-width:440px;color:var(--muted);font:12px/2 'Space Mono';margin-bottom:35px}
+.buildlab-tabs{display:grid;gap:7px;max-width:480px}
+.buildlab-tabs button{display:flex;align-items:center;gap:18px;text-align:left;padding:14px 15px;border:1px solid transparent;border-bottom-color:var(--line);background:transparent;color:#77777d;font:9px 'Space Mono';letter-spacing:1px;cursor:pointer;transition:.25s}
+.buildlab-tabs button span{color:#4b4b52}.buildlab-tabs button:hover,.buildlab-tabs button.active{border-color:rgba(182,255,0,.3);background:rgba(182,255,0,.045);color:var(--text)}.buildlab-tabs button.active span{color:var(--green)}
+.buildlab-stage{min-height:590px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.13);background:radial-gradient(ellipse at 50% 38%,rgba(130,80,255,.2),transparent 45%),linear-gradient(145deg,#111018,#070709 70%);isolation:isolate}
+.buildlab-stage:before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(ellipse at center,black,transparent 78%);opacity:.6}
+.buildlab-stage:after{content:'';position:absolute;inset:12px;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+.buildlab-stage.tone-lime{background:radial-gradient(ellipse at 50% 38%,rgba(182,255,0,.17),transparent 45%),linear-gradient(145deg,#11150b,#070907 70%)}
+.buildlab-stage.tone-cyan{background:radial-gradient(ellipse at 50% 38%,rgba(0,229,255,.17),transparent 45%),linear-gradient(145deg,#091317,#07090b 70%)}
+.stage-index,.stage-caption,.stage-bottom,.stage-crosshair{position:absolute;z-index:3;font-family:'Space Mono'}
+.stage-index{top:28px;left:30px;color:var(--green);font-size:10px;letter-spacing:1px}.stage-index span{color:#65656d}
+.stage-crosshair{top:28px;right:30px;color:#55555d;font-size:8px;letter-spacing:2px}
+.stage-orbit{position:absolute;z-index:1;left:50%;top:38%;width:280px;height:280px;border:1px solid rgba(182,255,0,.25);border-radius:50%;transform:translate(-50%,-50%) rotate(-28deg)}
+.orbit-two{width:380px;height:160px;transform:translate(-50%,-50%) rotate(52deg);border-color:rgba(0,229,255,.25)}
+.orbit-three{width:440px;height:220px;transform:translate(-50%,-50%) rotate(-62deg);border-color:rgba(255,255,255,.12)}
+.stage-core{position:absolute;z-index:2;left:50%;top:38%;width:150px;height:150px;transform:translate(-50%,-50%);display:grid;place-items:center;animation:coreFloat 5s ease-in-out infinite}
+.core-inner{width:105px;height:105px;display:grid;place-items:center;color:var(--green);background:linear-gradient(145deg,rgba(182,255,0,.18),rgba(255,255,255,.025));border:1px solid rgba(182,255,0,.55);box-shadow:0 0 65px rgba(182,255,0,.13),inset 0 0 30px rgba(182,255,0,.1);transform:rotate(45deg);backdrop-filter:blur(10px)}
+.core-inner svg{transform:rotate(-45deg)}.tone-cyan .core-inner{color:var(--cyan);border-color:rgba(0,229,255,.6);box-shadow:0 0 65px rgba(0,229,255,.15)}.tone-violet .core-inner{color:#bba0ff;border-color:rgba(187,160,255,.6);box-shadow:0 0 65px rgba(187,160,255,.15)}
+.core-ring{position:absolute;inset:0;border:1px dashed rgba(182,255,0,.35);border-radius:50%;animation:orbitSpin 18s linear infinite}
+.stage-caption{left:30px;right:30px;top:57%;display:flex;justify-content:space-between;font-size:8px;letter-spacing:1.5px;color:#77777e}.stage-caption span{color:var(--cyan)}.stage-caption b{font-weight:400}
+.stage-bottom{left:30px;right:30px;bottom:30px;border-top:1px solid rgba(255,255,255,.13);padding-top:22px}.stage-bottom strong{display:block;font:clamp(20px,3vw,31px) 'Bebas Neue';letter-spacing:1.5px;color:#f2f0ea}.stage-bottom p{max-width:470px;color:#85858c;font-size:10px;line-height:1.8;margin:10px 0 15px}.stage-tags{display:flex;gap:7px;flex-wrap:wrap}.stage-tags span{padding:6px 8px;border:1px solid rgba(255,255,255,.14);color:#a2a2a8;font-size:8px}
+.stage-glow{position:absolute;z-index:0;inset:auto -20% -50% -20%;height:240px;background:radial-gradient(ellipse,rgba(182,255,0,.12),transparent 65%);pointer-events:none}
+.buildlab-foot{border-top:1px solid var(--line);padding-top:17px}.buildlab-foot span:nth-child(2){color:var(--green)}
+@keyframes coreFloat{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-12px)}}
+@keyframes orbitSpin{to{transform:rotate(360deg)}}
+@media(max-width:900px){.buildlab-grid{grid-template-columns:1fr}.buildlab-stage{min-height:540px}.buildlab-copy h2{font-size:clamp(75px,15vw,120px)}}
+@media(max-width:560px){.buildlab{padding-top:85px}.buildlab-grid{padding:35px 0}.buildlab-stage{min-height:510px}.stage-orbit{width:220px;height:220px}.orbit-two{width:300px;height:130px}.orbit-three{width:340px;height:180px}.stage-core{top:35%}.stage-caption{top:55%}.stage-bottom{left:22px;right:22px;bottom:22px}.stage-index{left:22px}.stage-crosshair{right:22px}.buildlab-foot{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.stage-core,.core-ring{animation:none}}
